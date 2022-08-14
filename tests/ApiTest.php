@@ -47,7 +47,7 @@ class ApiTest extends BaseTest
 
         $contentType = $response->getHeaders()["Content-Type"][0];
         $this->assertEquals("application/json", $contentType);
-
+        
         $userId = json_decode($response->getBody())->{"id"};
         $userName = json_decode($response->getBody())->{"first_name"};
 

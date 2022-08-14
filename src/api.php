@@ -40,17 +40,18 @@ class Api
         while ($user = $getUsers->fetchArray(SQLITE3_ASSOC)) {
         $users[] = $user;
         }
-        print_r(json_encode($users));
+        echo json_encode($users);
         return json_encode($users);
     }
 
     public function show()
     {   
         $url = $_SERVER["REQUEST_URI"];
-        $id = array_pop(explode("/", $url));
+        $explode = explode("/", $url);
+        $id = array_pop($explode);
         $user = new User();
-        print_r(json_encode($user->findOne($id)));
-        return json_encode($user->findOne($id));
+        
+        echo $user->findOne($id);
     }
 
     public function store()
@@ -75,15 +76,16 @@ class Api
             "status" => "пользователь успешно добавлен",
             "user_id" => $user->id
         ];
-        print_r(json_encode($user));
-        //print_r(json_encode($data));
-        return $data;
+
+        echo json_encode($user);
+        return json_encode($user);
     }
 
     public function destroy()
     {   
         $url = $_SERVER["REQUEST_URI"];
-        $id = array_pop(explode("/", $url));
+        $explode = explode("/", $url);
+        $id = array_pop($explode);
         $user = new User();  
         $user->delete($id);
         return;

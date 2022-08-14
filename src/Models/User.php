@@ -4,11 +4,11 @@ namespace App\Models;
 
 class User
 {
-    public $id;
-    public $email;
-    public $first_name;
-    public $last_name;
-    public $password;
+    public $id = 0;
+    public $email = "";
+    public $first_name = "";
+    public $last_name = "";
+    public $password = "";
 
     public static function findOne(int | null $id = null) {
 
@@ -16,16 +16,16 @@ class User
 
         if ($id){
             $user = $db->query("SELECT * FROM users WHERE id = $id")->fetchArray(SQLITE3_ASSOC);
-            return (object) $user;
+            return json_encode($user);
         }
         $user = $db->query("SELECT * FROM users ORDER BY created_at DESC LIMIT 1")->fetchArray(SQLITE3_ASSOC);
-        return (object) $user;
+        return (object)$user;
     }
 
     public function getAll() {
 
         $db = \App\db\DB::getInstance()->getConnection();
-        $getUsers = $db->query('SELECT * FROM users');
+        $getUsers = $db->query("SELECT * FROM users");
         $users = [];
         
         while ($user = $getUsers->fetchArray(SQLITE3_ASSOC)) {
@@ -73,9 +73,9 @@ class User
         $errors = $this->validate();
 
         if(count($errors) !== 0){
-            print_r(json_encode($errors));
             return json_encode($errors);
         }
+
         $db->exec($sql);
 
         $savedUser = $db->query("SELECT * FROM users ORDER BY created_at DESC LIMIT 1")->fetchArray(SQLITE3_ASSOC);
