@@ -21,7 +21,8 @@
         },
         "files": [
             "src/db/connection.php",
-            "src/db/initial.php"
+            "src/db/initial.php",
+            "src/db/db.php"
         ]
     },
     "require": {
