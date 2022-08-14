@@ -77,6 +77,7 @@ class Api
             "user_id" => $user->id
         ];
 
+        
         echo json_encode($user);
         return json_encode($user);
     }
