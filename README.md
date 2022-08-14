@@ -1,5 +1,5 @@
 # Тестовое задание для кандидатов на позицию junior backend-developer
-
+<a href="https://ibb.co/WndtCqG"><img src="https://i.ibb.co/H7MdZ1B/image.jpg" alt="image" border="0"></a><br /><a target='_blank' href='https://ru.imgbb.com/'>рисунок из фото онлайн</a><br />
 Данное тестовое задание предполагает создание нескольких таблиц в БД Sqlite3, моделей для работы с таблицам и апи для получения и создания записей в таблице, а именно:
 
 1) Настройка подключения к базе `db.sqlite` в `src\db\connection.php`
