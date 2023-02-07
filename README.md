@@ -4,9 +4,9 @@
 
 1) Настройка подключения к базе `db.sqlite` в `src\db\connection.php`
 2) Создание таблиц `users` и `post` в БД в `scr\db\initial.php`
-3) Создание класса модели User в `src\Models\User.php` с указанными в задании методами и свойствами
-4) Создание класса модели Post в `src\Models\Post.php` с указанными в задании методами и свойствами
-5) Настройка endpoint для апи по урлам `PUT /api/users` `GET /api/users/:id` выполняющими указанные в задании процессы
+3) Создание класса модели User в `src\Models\User.php` 
+4) Создание класса модели Post в `src\Models\Post.php` 
+5) Настройка endpoint для апи по урлам `PUT /api/users` `GET /api/users/:id`
 
 
 
